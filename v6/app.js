@@ -17,6 +17,17 @@ app.set("view engine", "ejs");
 app.use(express.static(__dirname +"/public"));
 seedDB();
 
+app.use(require("express-session")({
+    secret: "Once again Rusty wins cutest dog!",
+    resave: false,
+    saveUninitialized: false
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
 // Campground.create(    
 //     {name: "Grantie Hill",
 //     image: "https://cdn.pixabay.com/photo/2018/12/24/22/19/camping-3893587_1280.jpg",
@@ -106,6 +117,23 @@ app.post("/campgrounds/:id/comments", function(req, res){
                 }
             });
         }
+    });
+});
+
+app.get("/register", function(req, res){
+    res.render("register");
+});
+
+app.post("/register", function(req, res){
+    var newUser = new User({username: req.body.username});
+    User.register(newUser, req.body.password, function(err, user){
+        if(err){
+            console.log(err);
+            return res.render("register");
+        } 
+        passport.authenticate("local")(req, res, function(){
+            res.redirect("/campgrounds");
+        });
     });
 });
 
