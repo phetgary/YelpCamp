@@ -17,7 +17,7 @@ middlewareObj.checkCapmgorundOwnership = function(req, res, next){
             }
         })
     } else {
-        req.flash("error", "YOU DON'T HAVE PERMISSION TO DO THAT!!");
+        req.flash("error", "您必須先登入會員!");
         res.redirect("back");
     }
 }
@@ -32,13 +32,13 @@ middlewareObj.checkCommentOwenership = function(req, res, next){
                 if(foundComment.author.id.equals(req.user._id)){
                     next()
                 } else {
-                    req.flash("error", "YOU DON'T HAVE PERMISSION TO DO THAT!");
+                    req.flash("error", "您必須先登入會員!");
                     res.redirect("back");
                 }
             }
         })
     } else {
-        req.flash("error", "YOU NEED TO BE LOGGED IN TO DO THAT!!");
+        req.flash("error", "您必須先登入會員!");
         res.redirect("back");
     }
 }
@@ -47,7 +47,7 @@ middlewareObj.isLoggedIn = function(req, res, next){
     if(req.isAuthenticated()){
         return next();
     } 
-    req.flash("error", "YOU NEED TO BE LOGGED IN TO DO THAT!!");
+    req.flash("error", "您必須先登入會員!");
     res.redirect("/login");
 }
 

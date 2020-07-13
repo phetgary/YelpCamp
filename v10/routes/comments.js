@@ -32,7 +32,7 @@ router.post("/",middleware.isLoggedIn, function(req, res){
                     campground.comments.push(comment);
                     campground.save();
                     console.log(comment);
-                    req.flash("success", "Successfully add comment!")
+                    req.flash("success", "成功新增留言!")
                     res.redirect("/campgrounds/"+ campground._id);
                 }
             });
@@ -65,7 +65,7 @@ router.delete("/:comment_id",middleware.checkCommentOwenership, function(req,res
         if(err){
             res.redirect("back");
         } else {
-            Req.flash("success", "Comment deleted!")
+            Req.flash("success", "留言已刪除")
             res.redirect("/campgrounds/" + req.params.id);
         }
     });

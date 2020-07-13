@@ -21,7 +21,7 @@ router.post("/register", function(req, res){
             return res.render("register", {error: err.message});
         }
         passport.authenticate("local")(req, res, function(){
-            req.flash("success", "Welcome to YelpCamp " + user.username);
+            req.flash("success", "歡迎成為 GaryCamp 的會員, " + user.username);
             res.redirect("/campgrounds");
         });
     });
@@ -42,7 +42,7 @@ router.post("/login", passport.authenticate("local",
 // logout route
 router.get("/logout", function(req, res){
     req.logout();
-    req.flash("success", "Logged you out!")
+    req.flash("success", "您已登出")
     res.redirect("/campgrounds");
 });
 //middleware

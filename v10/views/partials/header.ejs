@@ -3,7 +3,7 @@
     <head>
         <!-- Make site responsive on mobile/tablet -->
         <meta name="viewport" content="width=device-width, initial-scale=1">    
-        <title>YelpCamp</title>
+        <title>蓋瑞露營地</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="/stylesheets/main.css">
     </head>
@@ -19,7 +19,7 @@
                       <span class="icon-bar"></span>
                     </button>
         
-                    <a class="navbar-brand" href="/">YelpCamp</a>
+                    <a class="navbar-brand" href="/">GaryCamp</a>
                 </div>
                 <div id="navbar" class="collapse navbar-collapse">
                   <ul class="nav navbar-nav">
@@ -27,11 +27,11 @@
                   </ul>
                   <ul class="nav navbar-nav navbar-right">
                       <% if(!currentUser){ %>
-                          <li class="<%= typeof page !== 'undefined' && page === 'login' ? 'active' : '' %>"><a href="/login">Login</a></li>
-                          <li class="<%= typeof page !== 'undefined' && page === 'register' ? 'active' : '' %>"><a href="/register">Sign Up</a></li>
+                          <li class="<%= typeof page !== 'undefined' && page === 'login' ? 'active' : '' %>"><a href="/login">登入</a></li>
+                          <li class="<%= typeof page !== 'undefined' && page === 'register' ? 'active' : '' %>"><a href="/register">註冊</a></li>
                       <% } else { %>
-                          <li><a href="#">Signed In As <%= currentUser.username %></a></li>
-                          <li><a href="/logout">Logout</a></li>
+                          <li><a href="#">以 <%= currentUser.username %> 身分登入...</a></li>
+                          <li><a href="/logout">登出</a></li>
                       <% } %>
                   </ul>
                 </div>
