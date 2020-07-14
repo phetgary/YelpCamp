@@ -35,7 +35,7 @@
 <img src="https://github.com/phetgary/YelpCamp/blob/master/demoimage/p5.JPG" width="80%" height="80%" />
 
 
-### 使用RESTful API 佈置主頁、內文、評論編輯與更新的路由
+### 3. 使用RESTful API 佈置主頁、內文、評論編輯與更新的路由
 ### 串接Google Map API 資料
 ### 會員可新增、編輯、刪除自己的貼文與評論
 ### 貼文有按讚、查看有誰點讚功能
