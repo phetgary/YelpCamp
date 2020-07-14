@@ -13,9 +13,9 @@
 
 
 
-### 1. 這是一個會員制的露營地部網站 
+### 1. 這是一個會員制的部落格網站 
 ### 用戶可在網站上新增露營地的資訊 例如：地點、價格、內文、圖片
-### 使用Node.js和Epress環境開發後端
+### 使用Node.js和Express環境開發後端
 ### 並使用MongoDB儲存會員及貼文資料，並同步於MongoDB Atlas雲端資料庫
 
 
@@ -23,7 +23,7 @@
 
 
 ### 2. 使用Passport套件驗證會員登入狀態，若非會員則無法使用貼文及評論功能
-### 測試帳號 您也可自行註冊新的會員:)
+### 測試帳號如下 您也可自行註冊新的會員:)
 * 用戶Kim 
    - 帳號: Kim
    - 密碼: password
@@ -34,3 +34,9 @@
 <img src="https://github.com/phetgary/YelpCamp/blob/master/demoimage/p3.JPG" width="80%" height="80%" />
 <img src="https://github.com/phetgary/YelpCamp/blob/master/demoimage/p5.JPG" width="80%" height="80%" />
 
+
+### 使用RESTful API 佈置主頁、內文、評論編輯與更新的路由
+### 串接Google Map API 資料
+### 會員可新增、編輯、刪除自己的貼文與評論
+### 貼文有按讚、查看有誰點讚功能
+### 留言和貼文皆會顯示發布時間
